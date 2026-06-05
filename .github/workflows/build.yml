@@ -14,7 +14,7 @@ jobs:
       matrix:
         version: ["next", "default"]
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out build configurations
         uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
 
       - name: Install pmbootstrap from git
         run: |
-          git clone --depth=1 https://gitlab.com/postmarketOS/pmbootstrap/
+          git clone --depth=1 https://gitlab.postmarketos.org/postmarketOS/pmbootstrap
           mkdir -p ~/.local/bin
           ln -s "$PWD/pmbootstrap/pmbootstrap.py" ~/.local/bin/pmbootstrap
           pmbootstrap --version
